@@ -5,6 +5,14 @@ import java.util.Date;
 import java.util.List;
 
 public class Eleve extends Component {
+	public String getNom() {
+		return nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
 	private String nom;
 	private String prenom;
 	private Date date_de_naissance;

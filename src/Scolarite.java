@@ -15,7 +15,6 @@ public class Scolarite {
 		return instance_scolarite;
 	}
 
-
 	private ArrayList<Filiere> l_filiere = new ArrayList<>();
 
 	public HashMap<Devoir, Annee> getDevoirs() {
