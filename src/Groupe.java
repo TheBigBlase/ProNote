@@ -20,7 +20,7 @@ public class Groupe extends Component {
 	}
 
 	@Override
-	public List<Eleve> getStudents() {
+	public ArrayList<Eleve> getStudents() {
 		ArrayList<Eleve> res = new ArrayList<>();
 		for (Component child: this.children) {
 			res.addAll(child.getStudents());

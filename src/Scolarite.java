@@ -18,23 +18,18 @@ public class Scolarite {
 
 	private ArrayList<Filiere> l_filiere = new ArrayList<>();
 
-	public HashMap<Devoir, Semestre> getDevoirs() {
-		HashMap<Devoir, Semestre> hashMap = new HashMap<>();
-		ArrayList<Annee> annees = new ArrayList<>();
+	public HashMap<Devoir, Annee> getDevoirs() {
+		HashMap<Devoir, Annee> hashMap = new HashMap<>();
 		for(Filiere filiere: this.l_filiere){
-
 			for(Component c : filiere.getChildren()){
-				annees.add((Annee) c);
-			}
-		}
-
-		for (Annee annee: annees){
-			for(Semestre semestre : annee.getSemestres()){
-				for(UE ue: semestre.getUEs()){
-					for(Module module: ue.getListe_module())
-					{
-						for(Devoir devoir : module.getDevoirs()){
-							hashMap.put(devoir, semestre);
+				Annee annee = (Annee) c;
+				for(Semestre semestre : annee.getSemestres()){
+					for(UE ue: semestre.getUEs()){
+						for(Module module: ue.getListe_module())
+						{
+							for(Devoir devoir : module.getDevoirs()){
+								hashMap.put(devoir, annee);
+							}
 						}
 					}
 				}
@@ -46,16 +41,18 @@ public class Scolarite {
 
 	/**
 	 * 
-	 * @param semestre
+	 * @param annee
 	 */
-	public void getStudents(Semestre semestre) {
-		// TODO - implement Scolarite.getStudents
-		throw new UnsupportedOperationException();
+	public ArrayList<Eleve> getStudents(Annee annee) {
+		return annee.getStudents();
 	}
 
-	public void addNotes() {
-		// TODO - implement Scolarite.addNotes
-		throw new UnsupportedOperationException();
+	public void addNotes(HashMap<Eleve, Double> attributionNotes, Devoir devoir) {
+
+		Set<Eleve> ensembleEleve = attributionNotes.keySet();
+		for(Eleve e : ensembleEleve){
+			e.addNote(attributionNotes.get(e), devoir);
+		}
 	}
 
 	/**

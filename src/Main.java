@@ -1,5 +1,7 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -96,7 +98,19 @@ public class Main {
 
         Scolarite.getInstance().addFiliere(idu);
 
-        System.out.printf(Scolarite.getInstance().getDevoirs().toString());
+        System.out.println(Scolarite.getInstance().getDevoirs());
+        System.out.println(Scolarite.getInstance().getStudents(idu3));
 
+        ArrayList<Eleve> eleves = Scolarite.getInstance().getStudents(idu3);
+        HashMap<Eleve, Double> attributionNotes = new HashMap<>();
+        for(Eleve e : eleves){
+            attributionNotes.put(e, 20.0);
+
+        }
+        Scolarite.getInstance().addNotes(attributionNotes, examen);
+
+        System.out.println(eleve1);
+        System.out.println(idu3.getStudents());
+        System.out.println(idu4.getStudents());
     }
 }
