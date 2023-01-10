@@ -9,6 +9,7 @@ public class Annee extends Groupe {
 	}
 
 	private List<Semestre> semestres = new ArrayList<>();
+
 	public void addSemestre(Semestre semestre){
 		this.semestres.add(semestre);
 	}

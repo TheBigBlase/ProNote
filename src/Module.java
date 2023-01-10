@@ -44,8 +44,6 @@ public class Module {
 		return liste_prof;
 	}
 
-	public
-
 	public void setListe_prof(ArrayList<Prof> liste_prof) {
 		this.liste_prof = liste_prof;
 	}
