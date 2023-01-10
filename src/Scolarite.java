@@ -1,8 +1,20 @@
 package src;
-
 import java.util.*;
 
+
 public class Scolarite {
+	private static Scolarite instance_scolarite = null;
+
+	private Scolarite() {
+	}
+
+	public static Scolarite getInstance() {
+		if (instance_scolarite == null) {
+			instance_scolarite = new Scolarite();
+		}
+		return instance_scolarite;
+	}
+
 
 	private List<Filiere> l_filiere;
 
@@ -31,16 +43,6 @@ public class Scolarite {
 	 */
 	public void getFiliere(String nom_filiere) {
 		// TODO - implement Scolarite.getFiliere
-		throw new UnsupportedOperationException();
-	}
-
-	public void getInstance() {
-		// TODO - implement Scolarite.getInstance
-		throw new UnsupportedOperationException();
-	}
-
-	private Scolarite() {
-		// TODO - implement Scolarite.Scolarite
 		throw new UnsupportedOperationException();
 	}
 
