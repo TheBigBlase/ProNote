@@ -1,6 +1,8 @@
 package src;
 
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -105,6 +107,16 @@ public class Main {
         EDTidu3A1.addTuile(new Seance(new Date(), new Date(), "MATH531"));
         EDTidu3A1.addTuile(new Seance(new Date(), new Date(), "INFO501"));
 
+        ArrayList<Eleve> eleves = Scolarite.getInstance().getStudents(idu3);
+        HashMap<Eleve, Double> attributionNotes = new HashMap<>();
+        for(Eleve e : eleves){
+            attributionNotes.put(e, 20.0);
 
+        }
+        Scolarite.getInstance().addNotes(attributionNotes, examen);
+
+        System.out.println(eleve1);
+        System.out.println(idu3.getStudents());
+        System.out.println(idu4.getStudents());
     }
 }
