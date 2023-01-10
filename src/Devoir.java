@@ -1,7 +1,6 @@
 package src;
 
 public interface Devoir {
-
 	/**
 	 * 
 	 * @param note

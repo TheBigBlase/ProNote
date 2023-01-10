@@ -1,17 +1,30 @@
 package src;
 
+import java.util.ArrayList;
 public class EDT {
 
-	private Tuile liste_tuile;
+	public EDT(){
 
-	public void modif_tuile() {
-		// TODO - implement EDT.modif_tuile
-		throw new UnsupportedOperationException();
+	}
+	private ArrayList<Tuile> liste_tuile;
+
+	public void modif_tuile(Tuile old, Tuile newT) {
+		if(this.exist_tuile(old)){
+			int index = this.liste_tuile.indexOf(old);
+			this.liste_tuile.set(index, newT);
+		}
+		else {
+			this.liste_tuile.add(newT);
+		}
 	}
 
-	public void exist_tuile() {
-		// TODO - implement EDT.exist_tuile
-		throw new UnsupportedOperationException();
+	public boolean exist_tuile(Tuile t) {
+		if(liste_tuile.contains(t)){
+			return true;
+		}
+		return false;
 	}
-
+	public ArrayList<Tuile> getAllTuiles(){
+		return this.liste_tuile;
+	}
 }

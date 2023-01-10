@@ -1,7 +1,31 @@
 package src;
 
-public class DevoirMaison extends Tuile {
+import java.util.Date;
 
-	private int attribute;
+public class DevoirMaison extends Tuile implements Devoir{
+	private Note note;
+
+	public DevoirMaison(Date date_debut, Date date_fin){
+		super(date_debut, date_fin);
+		this.note = new Note();//TODO after note class is implemented
+	}
+
+	public DevoirMaison(Date date_debut, Date date_fin, Note note){
+		super(date_debut, date_fin);
+		this.note = note;
+	}
+
+	public void addNote(Note note){
+
+	}
+
+	public Note getNote() {
+		return note;
+	}
+
+	public void setNote(Note note) {
+		this.note = note;
+	}
+
 
 }
