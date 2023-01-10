@@ -21,11 +21,11 @@ public class Examen implements Devoir {
 		this.seance = seance;
 	}
 
-	public float getCoeficient() {
+	public double getCoeficient() {
 		return coeficient;
 	}
 
-	public void setCoeficient(float coeficient) {
+	public void setCoeficient(double coeficient) {
 		this.coeficient = coeficient;
 	}
 
