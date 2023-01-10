@@ -79,9 +79,24 @@ public class Main {
 
         System.out.println("Tout les eleves d'idu");
 
+
         for (Eleve el: all_idu
         ) {
             System.out.println(el);
         }
+
+        UE ue1 = new UE("ue1");
+        idu3.addSemestre(new Semestre("S1"));
+        idu3.getSemestres().get(0).addUE(ue1);
+
+        Module isoc = new Module("ISOC", null);
+        ue1.addModule(isoc);
+        Examen examen = new Examen("ISOC731", "De la merde", 0.8, null);
+        isoc.addDevoir(examen);
+
+        Scolarite.getInstance().addFiliere(idu);
+
+        System.out.printf(Scolarite.getInstance().getDevoirs().toString());
+
     }
 }

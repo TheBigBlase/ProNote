@@ -7,4 +7,8 @@ public interface Devoir {
 	 */
 	void addNote(Note note);
 
+	String getNom();
+
+	Double getMoyenne();
+
 }

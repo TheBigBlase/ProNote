@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Module {
 	private String nomDescriptif; //ie Maths531
 	private String nomComplet;// ie statistics
-	private ArrayList<Prof> liste_prof;
+	private ArrayList<Prof> liste_prof = new ArrayList<>();
 	private String couleur;//????
 	private ArrayList<Seance> liste_seance = new ArrayList<>();
 	private ArrayList<Devoir> devoirs = new ArrayList<>();
@@ -23,6 +23,14 @@ public class Module {
 
 	public String getNomDescriptif() {
 		return nomDescriptif;
+	}
+
+	public ArrayList<Devoir> getDevoirs() {
+		return devoirs;
+	}
+
+	public void addDevoir(Devoir devoir){
+		this.devoirs.add(devoir);
 	}
 
 	public void setNomDescriptif(String nomDescriptif) {

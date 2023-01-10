@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class UE {
 
 	private String nom;
-	private ArrayList<Module> liste_module;
+	private ArrayList<Module> liste_module = new ArrayList<>();
 
 	public UE(String nom){
 		this.nom = nom;

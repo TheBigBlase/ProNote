@@ -7,10 +7,14 @@ public class Examen implements Devoir {
 	private String description;
 	private Seance seance;
 	private ArrayList<Note> notes = new ArrayList<>();
+	private String nom;
 
 
-	public Examen(){
-
+	public Examen(String nom, String description, Double coeficient, Seance seance){
+		this.nom = nom;
+		this.description = description;
+		this.coeficient = coeficient;
+		this.seance = seance;
 	}
 
 	public Seance getSeance() {
@@ -42,4 +46,28 @@ public class Examen implements Devoir {
 		this.notes.add(note);
 	}
 
+	@Override
+	public String getNom() {
+		return this.nom;
+	}
+
+	@Override
+	public Double getMoyenne() {
+		Double moyenne = 0.0;
+		for(Note note: this.notes){
+			moyenne += note.getValeur();
+		}
+		moyenne = moyenne / this.notes.size();
+		return moyenne;
+	}
+
+	@Override
+	public String toString() {
+		return "Examen{" +
+				"coeficient=" + coeficient +
+				", description='" + description + '\'' +
+				", notes=" + notes +
+				", nom='" + nom + '\'' +
+				'}';
+	}
 }

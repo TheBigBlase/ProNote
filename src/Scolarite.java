@@ -33,13 +33,15 @@ public class Scolarite {
 				for(UE ue: semestre.getUEs()){
 					for(Module module: ue.getListe_module())
 					{
-						// module.get
+						for(Devoir devoir : module.getDevoirs()){
+							hashMap.put(devoir, semestre);
+						}
 					}
 				}
 			}
 		}
 
-		return null ;
+		return hashMap ;
 	}
 
 	/**
@@ -65,4 +67,7 @@ public class Scolarite {
 		throw new UnsupportedOperationException();
 	}
 
+	public void addFiliere(Filiere f){
+		this.l_filiere.add(f);
+	}
 }

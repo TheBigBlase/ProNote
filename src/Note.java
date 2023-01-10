@@ -8,6 +8,14 @@ public class Note {
 		this.devoir.addNote(this);
 	}
 
+	public double getValeur() {
+		return valeur;
+	}
+
+	public Devoir getDevoir() {
+		return devoir;
+	}
+
 	private double valeur;
 	private Devoir devoir;
 
