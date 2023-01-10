@@ -1,6 +1,9 @@
 package src;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Eleve extends Component {
 
@@ -13,6 +16,11 @@ public class Eleve extends Component {
 	private String prenom;
 	private Date date_de_naissance;
 	private String num_etudiant;
+
+	public Eleve(String nom, String prenom) {
+		this.nom = nom;
+		this.prenom = prenom;
+	}
 
 	/**
 	 * 
@@ -34,4 +42,10 @@ public class Eleve extends Component {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public List<Eleve> getStudents() {
+		ArrayList<Eleve> res = new ArrayList<>();
+		res.add(this);
+		return res;
+	}
 }
