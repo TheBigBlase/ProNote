@@ -1,7 +1,13 @@
 package src;
 
-public class Projet extends Tuile {
+import java.util.ArrayList;
 
-	private int attribute;
+public class Projet extends Tuile implements Devoir {
 
+	private ArrayList<Note> notes = new ArrayList<>();
+
+	@Override
+	public void addNote(Note note) {
+		this.notes.add(note);
+	}
 }
