@@ -3,6 +3,7 @@ package src;
 import java.util.Date;
 public class Seance extends Tuile {
 
+	private Prof prof;
 	private String nom;
 	private int numero = -1;
 

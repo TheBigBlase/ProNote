@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -96,7 +97,14 @@ public class Main {
 
         Scolarite.getInstance().addFiliere(idu);
 
-        System.out.printf(Scolarite.getInstance().getDevoirs().toString());
+        System.out.println(Scolarite.getInstance().getDevoirs().toString());
+
+        System.out.println("Ajout des EDTS");
+        EDT EDTidu3A1 = new EDT();
+
+        EDTidu3A1.addTuile(new Seance(new Date(), new Date(), "MATH531"));
+        EDTidu3A1.addTuile(new Seance(new Date(), new Date(), "INFO501"));
+
 
     }
 }

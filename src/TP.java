@@ -3,8 +3,18 @@ package src;
 import java.util.ArrayList;
 
 public class TP extends Groupe {
+    private EDT edt;
+
     public TP(String nom) {
         super(nom);
+    }
+
+    public EDT getEdt() {
+        return edt;
+    }
+
+    public void setEdt(EDT edt) {
+        this.edt = edt;
     }
 
     @Override
