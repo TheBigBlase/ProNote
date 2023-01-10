@@ -16,11 +16,30 @@ public class Scolarite {
 	}
 
 
-	private List<Filiere> l_filiere;
+	private ArrayList<Filiere> l_filiere = new ArrayList<>();
 
-	public void getDevoirs() {
-		// TODO - implement Scolarite.getDevoirs
-		throw new UnsupportedOperationException();
+	public HashMap<Devoir, Semestre> getDevoirs() {
+		HashMap<Devoir, Semestre> hashMap = new HashMap<>();
+		ArrayList<Annee> annees = new ArrayList<>();
+		for(Filiere filiere: this.l_filiere){
+
+			for(Component c : filiere.getChildren()){
+				annees.add((Annee) c);
+			}
+		}
+
+		for (Annee annee: annees){
+			for(Semestre semestre : annee.getSemestres()){
+				for(UE ue: semestre.getUEs()){
+					for(Module module: ue.getListe_module())
+					{
+						// module.get
+					}
+				}
+			}
+		}
+
+		return null ;
 	}
 
 	/**

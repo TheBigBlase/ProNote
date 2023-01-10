@@ -1,14 +1,18 @@
 package src;
 
-public class TD extends Groupe {
+import java.util.ArrayList;
 
-	/**
-	 * 
-	 * @param tp
-	 */
-	public void get_tp(String tp) {
-		// TODO - implement TD.get_tp
-		throw new UnsupportedOperationException();
+public class TD extends Groupe {
+	public TD(String nom) {
+		super(nom);
 	}
 
+	@Override
+	public void addChild(Component component) {
+		if (component instanceof TP) {
+			this.children.add(component);
+		} else {
+			throw new IllegalArgumentException("Le component doit être de type TP pour être ajouté à un TD.");
+		}
+	}
 }

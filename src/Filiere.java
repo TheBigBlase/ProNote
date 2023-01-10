@@ -1,18 +1,20 @@
 package src;
 
+import java.util.ArrayList;
+
 public class Filiere extends Groupe {
+	public Filiere(String nom) {
+		super(nom);
+	}
 
 	private String nom;
 
-	/**
-	 * 
-	 * @param annee
-	 * @param td
-	 * @param tp
-	 */
-	public void get_tp(String annee, String td, String tp) {
-		// TODO - implement Filiere.get_tp
-		throw new UnsupportedOperationException();
+	@Override
+	public void addChild(Component component) {
+		if (component instanceof Annee) {
+			this.children.add(component);
+		} else {
+			throw new IllegalArgumentException("Le component doit être de type année pour être ajouté à une filière.");
+		}
 	}
-
 }

@@ -7,7 +7,8 @@ public class Module {
 	private String nomComplet;// ie statistics
 	private ArrayList<Prof> liste_prof;
 	private String couleur;//????
-	private ArrayList<Seance> liste_seance;
+	private ArrayList<Seance> liste_seance = new ArrayList<>();
+	private ArrayList<Devoir> devoirs = new ArrayList<>();
 
 	public Module(String nomDescriptif, String nomComplet, Prof prof){
 		this.nomDescriptif = nomDescriptif;
@@ -42,6 +43,8 @@ public class Module {
 	public ArrayList<Prof> getListe_prof() {
 		return liste_prof;
 	}
+
+	public
 
 	public void setListe_prof(ArrayList<Prof> liste_prof) {
 		this.liste_prof = liste_prof;
