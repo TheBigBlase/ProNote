@@ -29,22 +29,7 @@ public class AddNote {
         idu3A2.addChild(eleve4);
 
         List<Eleve> all_idu = idu.getStudents();
-
-        System.out.println("Tout les eleves d'idu");
-
-        for (Eleve el: all_idu
-        ) {
-            System.out.println(el);
-        }
-
         List<Eleve> idu_groupe_A1 = idu3A1.getStudents();
-
-        System.out.println("Tout les eleves d'idu3A1");
-        for (Eleve el: idu_groupe_A1
-        ) {
-            System.out.println(el);
-        }
-
 
         Annee idu4 = new Annee("4");
 
@@ -77,21 +62,13 @@ public class AddNote {
 
         all_idu = idu.getStudents();
 
-        System.out.println("Tout les eleves d'idu");
-
-
-        for (Eleve el: all_idu
-        ) {
-            System.out.println(el);
-        }
-
-        UE ue1 = new UE("ue1");
-        idu3.addSemestre(new Semestre("S1"));
-        idu3.getSemestres().get(0).addUE(ue1);
+        UE ue1 = new UE("ue704");
+        idu4.addSemestre(new Semestre("S7"));
+        idu4.getSemestres().get(0).addUE(ue1);
 
         Module isoc = new Module("ISOC", null);
         ue1.addModule(isoc);
-        Examen examen = new Examen("ISOC731", "De la merde", 0.8, null);
+        Examen examen = new Examen("ISOC731", "Controle de cours", 0.8, null);
         isoc.addDevoir(examen);
 
         Scolarite.getInstance().addFiliere(idu);
